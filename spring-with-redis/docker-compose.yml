@@ -1,0 +1,13 @@
+version: "3"
+services:
+  redis-server:
+    image: redis
+    ports:
+      - "6379:6379"
+  my-spring-redis-app:
+    build: .
+    ports:
+      - "8787:8787"
+    links:
+      - redis-server
+
